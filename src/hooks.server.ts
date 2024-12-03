@@ -24,7 +24,6 @@ export const handle: Handle = async ({ event, resolve }) => {
     ) {
       return redirect(302, "/login");
     }
-    // }
 
     return resolve(event);
   }
