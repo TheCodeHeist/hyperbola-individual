@@ -1,4 +1,7 @@
-import type { IStudentDetailsFieldProperties } from "./generic_schemas";
+import type {
+  IBatchesDetails,
+  IStudentDetailsFieldProperties,
+} from "./generic_schemas";
 
 export interface UserDoc {
   _id: string;
@@ -14,8 +17,10 @@ interface StudentsBaseDoc {
   _id: string;
 }
 
-interface StudentsDetailsDoc extends StudentsBaseDoc {
-  details: Object;
+export interface StudentsDetailsDoc extends StudentsBaseDoc {
+  details: {
+    [key: string]: any;
+  };
   class_id: string;
   batch_id: string;
 }
@@ -29,15 +34,8 @@ export type StudentsDoc = StudentsDetailsDoc | StudentsFieldsDetailsDoc;
 export interface ClassesDoc {
   _id: string;
   name: string;
-  batches: string[];
-  students: string[];
-}
-
-export interface BatchesDoc {
-  _id: string;
-  name: string;
-  students: string[];
-  class_id: string;
+  description: string;
+  batches: IBatchesDetails[];
 }
 
 export const DB_NAME = "hyperbola_individual_db";

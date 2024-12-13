@@ -7,8 +7,8 @@ import {
 } from "$lib/db_schemas";
 
 export const load: PageServerLoad = async (event) => {
-  let Students = db.collection("students") as Collection<StudentsDoc>;
-  let data_fields = await Students.findOne({
+  let StudentsCollection = db.collection("students") as Collection<StudentsDoc>;
+  let data_fields = await StudentsCollection.findOne({
     _id: DB_STUDENT_COLLECTION_SCHEMA_HOLDER_ID,
   });
 
@@ -24,10 +24,12 @@ export const actions: Actions = {
       (formData.get("data_fields") as string) ?? "[]"
     );
 
-    let Students = db.collection("students") as Collection<StudentsDoc>;
+    let StudentsCollection = db.collection(
+      "students"
+    ) as Collection<StudentsDoc>;
 
     try {
-      await Students.updateOne(
+      await StudentsCollection.updateOne(
         { _id: DB_STUDENT_COLLECTION_SCHEMA_HOLDER_ID },
         { $set: { fields: data_fields } },
         { upsert: true }

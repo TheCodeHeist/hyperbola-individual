@@ -40,19 +40,14 @@
       id="field"
       bind:value={field.type}
     >
-      <option value="text">Text</option>
+      <option value="short_text">Short Text</option>
+      <option value="long_text">Long Text</option>
       <option value="numeric">Numeric</option>
-      <option value="yes_no">Yes/No</option>
+      <option value="boolean">Yes/No</option>
       <option value="date">Date</option>
       <option value="email">Email</option>
       <option value="phone_number">Phone Number</option>
-      <option value="url">URL</option>
       <option value="dropdown">Dropdown</option>
-      <option value="multi_select">Multi-Select</option>
-      <option value="checkbox">Checkbox</option>
-      <option value="radio">Radio</option>
-      <option value="file">File</option>
-      <option value="image">Image</option>
     </select>
 
     <div class="w-1/4 flex justify-center items-center">

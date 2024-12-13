@@ -5,10 +5,10 @@ import { DB_NAME, type SessionDoc, type UserDoc } from "$lib/db_schemas";
 import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 import db from "./db";
 
-const Session = db.collection("sessions") as Collection<SessionDoc>;
-const User = db.collection("users") as Collection<UserDoc>;
+const SessionCollection = db.collection("sessions") as Collection<SessionDoc>;
+const UserCollection = db.collection("users") as Collection<UserDoc>;
 
-const adapter = new MongodbAdapter(Session, User);
+const adapter = new MongodbAdapter(SessionCollection, UserCollection);
 
 export const lucia = new Lucia(adapter, {
   sessionCookie: {

@@ -1,17 +1,12 @@
 export enum EStudentDetailsFieldPropertiesType {
-  TEXT = "text",
+  SHORT_TEXT = "short_text",
+  LONG_TEXT = "long_text",
   NUMERIC = "numeric",
-  YES_NO = "yes_no",
+  BOOLEAN = "boolean",
   DATE = "date",
   EMAIL = "email",
   PHONE_NUMBER = "phone_number",
-  URL = "url",
   DROPDOWN = "dropdown",
-  MULTI_SELECT = "multi_select",
-  CHECKBOX = "checkbox",
-  RADIO = "radio",
-  FILE = "file",
-  IMAGE = "image",
 }
 
 export interface IStudentDetailsFieldProperties {
@@ -20,4 +15,11 @@ export interface IStudentDetailsFieldProperties {
   type: EStudentDetailsFieldPropertiesType;
   required: boolean;
   options?: string[];
+}
+
+export interface IBatchesDetails {
+  id: string;
+  name: string;
+  description: string;
+  students: string[];
 }

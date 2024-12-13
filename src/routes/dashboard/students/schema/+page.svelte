@@ -140,7 +140,7 @@
         {
           name: "New Field",
           id: crypto.randomUUID(),
-          type: EStudentDetailsFieldPropertiesType.TEXT,
+          type: EStudentDetailsFieldPropertiesType.SHORT_TEXT,
           required: false,
         },
       ];
