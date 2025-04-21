@@ -7,10 +7,8 @@
   let { form }: { form: ActionData } = $props();
 </script>
 
-<main
-  class="w-full h-screen bg-slate-950 flex flex-col items-center justify-center gap-8"
->
-  {#if form?.success}
+<main class="w-full h-screen flex flex-col items-center justify-center gap-8">
+  {#if !form?.success}
     <div
       class="absolute top-0 left-0 w-screen h-screen bg-[#000000A0] backdrop-blur-sm flex justify-center items-center z-50"
     >
@@ -43,9 +41,9 @@
     </div>
   {/if}
 
-  <p class="font-semibold text-teal-500 text-4xl">
+  <h2 class="h2 font-semibold text-primary-500">
     Don&apos;t let your guard down!
-  </p>
+  </h2>
 
   <p class="font-semibold text-white text-xl text-center">
     Let&apos;s setup 2-factor authentication!
@@ -99,10 +97,7 @@
   </div>
 
   <form method="post">
-    <button
-      type="submit"
-      class="px-4 py-2 font-medium text-teal-400 rounded-lg hover:bg-teal-400 hover:text-slate-950 transition-colors duration-300 ease-in-out"
-    >
+    <button type="submit" class="btn variant-filled-primary">
       Proceed
 
       <FontAwesomeIcon icon={faArrowRight} class="ml-2" />
@@ -111,8 +106,8 @@
 
   <button
     type="button"
-    class="px-4 py-2 text-teal-500 hover:underline"
-    onclick={() => goto("/dashboard")}
+    class="btn variant-soft-tertiary"
+    onclick={() => goto("/dashboard/main")}
   >
     Skip for now
   </button>

@@ -20,7 +20,7 @@
 </script>
 
 <main
-  class="w-full h-screen bg-slate-950 flex flex-col items-center justify-center"
+  class="w-full h-screen flex flex-col items-center justify-center"
 >
   {#if form?.success && form?.twoFactorRequired}
     <div

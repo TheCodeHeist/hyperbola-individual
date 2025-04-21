@@ -4,26 +4,24 @@
   import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 </script>
 
-<main
-  class="w-full h-screen bg-slate-950 flex flex-col items-center justify-center gap-8"
->
+<main class="w-full h-screen flex flex-col items-center justify-center gap-8">
   <img
     src="/logo.png"
     alt="logo"
     class="w-32 rounded-lg border-2 shadow-md shadow-emerald-300"
   />
 
-  <p class="font-bold text-white text-5xl">
-    Welcome to <span class="text-teal-500">Hyperbola</span>
-  </p>
+  <h1 class="h1 font-bold">
+    Welcome to <span class="text-primary-500">Hyperbola</span>
+  </h1>
 
-  <p class="font-semibold text-white text-xl text-center">
+  <p class="font-semibold">
     Your ultimate free and open-source student management solution.
   </p>
 
   <button
     type="button"
-    class="px-4 py-2 font-medium text-teal-400 rounded-lg hover:bg-teal-400 hover:text-slate-950 transition-colors duration-300 ease-in-out"
+    class="btn variant-filled-primary"
     onclick={() => goto("/get-started/register")}
   >
     Get Started
